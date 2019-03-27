@@ -55,8 +55,8 @@ while ((my $k, my $v) = each %ENV) {
 #
 # Format message card
 #
-if (not defined $nagios{'SERVICESTATE'}) {
-    # if service state env is not set, event is host notification.
+if (not length($nagios{'SERVICESTATE'})) {
+    # if service state env is not defnined or empty, event is host notification.
     $nagios{'SERVICEDESC'} = "host status";
     $nagios{'SERVICESTATE'} = $nagios{'HOSTSTATE'};
     $nagios{'SERVICEOUTPUT'} = $nagios{'HOSTOUTPUT'};
