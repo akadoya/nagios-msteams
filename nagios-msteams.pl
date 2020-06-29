@@ -61,6 +61,9 @@ if (not length($nagios{'SERVICESTATE'})) {
     $nagios{'SERVICESTATE'} = $nagios{'HOSTSTATE'};
     $nagios{'SERVICEOUTPUT'} = $nagios{'HOSTOUTPUT'};
 }
+if (not length($nagios{'HOSTALIAS'})) {
+    $nagios{'HOSTALIAS'} = $nagios{'HOSTNAME'};
+}
 $event{'themeColor'} = $color{"$nagios{'SERVICESTATE'}"};
 $event{'title'} = "$nagios{'HOSTALIAS'}/$nagios{'SERVICEDESC'} is $nagios{'SERVICESTATE'}";
 $event{'summary'} = $event{'title'};
