@@ -101,6 +101,7 @@ my $json = encode_json \%event;
 
 my $ua = LWP::UserAgent->new;
 $ua->timeout(15);
+$ua->env_proxy;
 
 my $req = HTTP::Request->new('POST', $webhook);
 $req->header('Content-Type' => 'application/json');
