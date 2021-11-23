@@ -19,6 +19,13 @@ export NAGIOS_HOSTALIAS="hoge101" NAGIOS_SERVICEDESC="http" NAGIOS_SERVICESTATE=
 ./nagios-msteams.pl --webhook 'https://your incoming webhook url'
 ```
 
+Proxy environment variables can be specified using lowercase environment variables ending in "*_proxy".
+
+```
+export http_proxy="http://proxy.example.com/"
+export no_proxy="localhost"
+```
+
 ## installation
 
 1. place the script in nagios plugin directory
