@@ -8,3 +8,12 @@ services:
       - 8080:80
     volumes:
       - .:/opt/Custom-Nagios-Plugins
+  proxy:
+    image: zachdeibert/ngx_http_proxy_connect_module
+    container_name: nginx
+    ports:
+      - "8333:8333"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./dev/nginx/proxy.conf:/usr/local/nginx/conf/nginx.conf
+    restart: always
