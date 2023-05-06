@@ -7,11 +7,12 @@ These perl modules need to be installed.
 
  - HTTP::Request
  - LWP::UserAgent
+ - LWP::Protocol::https
  - JSON
 
 ## usage
 
-`--webhook` is required option. 
+`--webhook` is required option.
 `--nagios_url` to add a link in the notification.
 
 ```
