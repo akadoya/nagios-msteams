@@ -37,6 +37,10 @@ $event{'@context'} = "https://schema.org/extensions";
 $nagios{'HOSTNOTES'} = "not defined";
 
 
+# Webhook debugging options
+#use LWP::Protocol::https;
+#$IO::Socket::SSL::DEBUG=3;
+
 #
 # Get command-line options
 #
