@@ -76,7 +76,7 @@ my @facts = ({
     'value' => "$nagios{'HOSTALIAS'}"
    },{
     'name' => "Details:",
-    'value' => "$nagios{'SERVICEOUTPUT'}"
+    'value' => "$nagios{'SERVICEOUTPUT'}\n $nagios{'LONGSERVICEOUTPUT'}"
 });
 my %section = ( 'facts' => \@facts, 'text' => "Host Notes: $nagios{'HOSTNOTES'}" );
 push(@sections, \%section);
