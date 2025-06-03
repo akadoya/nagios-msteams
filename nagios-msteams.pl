@@ -64,6 +64,7 @@ if (not length($nagios{'SERVICESTATE'})) {
     $nagios{'SERVICEDESC'} = "host status";
     $nagios{'SERVICESTATE'} = $nagios{'HOSTSTATE'};
     $nagios{'SERVICEOUTPUT'} = $nagios{'HOSTOUTPUT'};
+    $nagios{'LONGSERVICEOUTPUT'} = $nagios{'LONGHOSTOUTPUT'};
 }
 if (not length($nagios{'HOSTALIAS'})) {
     $nagios{'HOSTALIAS'} = $nagios{'HOSTNAME'};
