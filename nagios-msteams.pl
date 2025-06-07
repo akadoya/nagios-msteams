@@ -64,6 +64,7 @@ if (not length($nagios{'SERVICESTATE'})) {
     $nagios{'SERVICEDESC'} = "host status";
     $nagios{'SERVICESTATE'} = $nagios{'HOSTSTATE'};
     $nagios{'SERVICEOUTPUT'} = $nagios{'HOSTOUTPUT'};
+    $nagios{'LONGSERVICEOUTPUT'} = $nagios{'LONGHOSTOUTPUT'};
 }
 if (not length($nagios{'HOSTALIAS'})) {
     $nagios{'HOSTALIAS'} = $nagios{'HOSTNAME'};
@@ -76,7 +77,7 @@ my @facts = ({
     'value' => "$nagios{'HOSTALIAS'}"
    },{
     'name' => "Details:",
-    'value' => "$nagios{'SERVICEOUTPUT'}"
+    'value' => "$nagios{'SERVICEOUTPUT'} $nagios{'LONGSERVICEOUTPUT'}"
 });
 my %section = ( 'facts' => \@facts, 'text' => "Host Notes: $nagios{'HOSTNOTES'}" );
 push(@sections, \%section);
